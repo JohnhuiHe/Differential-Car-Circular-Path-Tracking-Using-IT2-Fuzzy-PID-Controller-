@@ -1,0 +1,83 @@
+[System]
+Name='my_car'
+Type='sugeno'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=25
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+TypeRedMethod='Karnik-Mendel'
+
+[Input1]
+Name='x'
+Range=[-2 2]
+NumMFs=5
+MF1U='NBU':'trimf',[-3 -2 -1 1]
+MF1L='NBL':'trimf',[-2.5 -2 -1.5 1]
+MF2U='NSU':'trimf',[-2 -1 0 1]
+MF2L='NSL':'trimf',[-1.5 -1 -0.5 1]
+MF3U='ZRU':'trimf',[-1 0 1 1]
+MF3L='ZRL':'trimf',[-0.5 0 0.5 1]
+MF4U='PSU':'trimf',[0 1 2 1]
+MF4L='PSL':'trimf',[0.5 1 1.5 1]
+MF5U='PBU':'trimf',[1 2 3 1]
+MF5L='PBL':'trimf',[1.5 2 2.5 1]
+
+[Input2]
+Name='y'
+Range=[-2 2]
+NumMFs=5
+MF1U='NBU':'trimf',[-3 -2 -1 1]
+MF1L='NBL':'trimf',[-2.5 -2 -1.5 1]
+MF2U='NSU':'trimf',[-2 -1 0 1]
+MF2L='NSL':'trimf',[-1.5 -1 -0.5 1]
+MF3U='ZRU':'trimf',[-1 0 1 1]
+MF3L='ZRL':'trimf',[-0.5 0 0.5 1]
+MF4U='PSU':'trimf',[0 1 2 1]
+MF4L='PSL':'trimf',[0.5 1 1.5 1]
+MF5U='PBU':'trimf',[1 2 3 1]
+MF5L='PBL':'trimf',[1.5 2 2.5 1]
+
+[Output1]
+Name='n'
+CrispInterval='interval'
+Range=[-3 3]
+NumMFs=7
+MF1='NB':'constant',[-3 -2.5]
+MF2='NM':'constant',[-2.5 -1.5]
+MF3='NS':'constant',[-1.5 -0.5]
+MF4='ZR':'constant',[-0.5 0.5]
+MF5='PS':'constant',[0.5 1.5]
+MF6='PM':'constant',[1.5 2.5]
+MF7='PB':'constant',[2.5 3]
+
+[Rules]
+1 1, 7 (1) : 1
+1 2, 7 (1) : 1
+1 3, 6 (1) : 1
+1 4, 5 (1) : 1
+1 5, 4 (1) : 1
+2 1, 7 (1) : 1
+2 2, 6 (1) : 1
+2 3, 5 (1) : 1
+2 4, 4 (1) : 1
+2 5, 3 (1) : 1
+3 1, 6 (1) : 1
+3 2, 5 (1) : 1
+3 3, 4 (1) : 1
+3 4, 3 (1) : 1
+3 5, 2 (1) : 1
+4 1, 5 (1) : 1
+4 2, 4 (1) : 1
+4 3, 3 (1) : 1
+4 4, 2 (1) : 1
+4 5, 1 (1) : 1
+5 1, 4 (1) : 1
+5 2, 3 (1) : 1
+5 3, 2 (1) : 1
+5 4, 1 (1) : 1
+5 5, 1 (1) : 1
